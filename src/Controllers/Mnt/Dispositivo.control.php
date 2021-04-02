@@ -61,7 +61,7 @@ class Dispositivo extends \Controllers\PublicController
                 case "UPD":
                     if (\Dao\Mnt\Dispositivos::update($this->nombre, $this->marca, $this->serie, $this->categorias_idCategoria, $this->precioUnitario, $this->stock, $this->idDispositivo)) {
                         \Utilities\Site::redirectToWithMsg(
-                            "index.php?page=mnt_dispositivo",
+                            "index.php?page=mnt_dispositivos",
                             "Dispositivo Actualizado Satisfactoriamente!"
                         );
                     }
@@ -69,7 +69,7 @@ class Dispositivo extends \Controllers\PublicController
                 case "DEL":
                     if (\Dao\Mnt\Dispositivos::delete($this->idDispositivo)) {
                         \Utilities\Site::redirectToWithMsg(
-                            "index.php?page=mnt_dispositivo",
+                            "index.php?page=mnt_dispositivos",
                             "Dispositivo Eliminado Satisfactoriamente!"
                         );
                     }
@@ -119,8 +119,7 @@ class Dispositivo extends \Controllers\PublicController
 
     private function _setViewData()
     {
-        
-        $this->categorias_idCategoria;
+        $this->categorias_idCategoria_Movil = ($this->categorias_idCategoria === "01") ? "selected" : "";
         $this->mode_dsc = sprintf(
             $this->mode_adsc[$this->mode],
             $this->idDispositivo,

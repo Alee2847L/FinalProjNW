@@ -28,8 +28,8 @@
               >
             </li>
             <li>
-              <a class="dropdown-trigger" id="btnmovil" data-target="Movil1"
-                >Móviles<i class="fas fa-mobile material-icons left"></i></i></a
+              <a class="dropdown-trigger" id="btnmovil" data-target="dispositivos"
+                >Dispositivos<i class="fas fa-laptop-house left"></i></a
               >
               <script>
                       document.addEventListener("DOMContentLoaded", function () {
@@ -42,15 +42,22 @@
                   </script>
             </li>
             <li>
-              <a class="dropdown-trigger" href="#" data-target="Tecnologia1"
-                >Computadoras<i class="fas fa-laptop material-icons left"></i>
-                </a
-              >
-            </li>
-            <li>
               <a class="dropdown-trigger" href="#" data-target="Servicios"
                 >Servicios<i class="fas fa-briefcase aterial-icons left"></i></a>
             </li>
+            <li>
+              <a class="dropdown-trigger" href="#" data-target="usuarios"
+                >Usuarios<i class="fas fa-users left"></i></a>
+            </li>
+            <li>
+              <a class="dropdown-trigger" href="#" data-target="login"
+                >Iniciar Sesión|</a>
+            </li>
+            <li>
+              <a class="dropdown-trigger" href="#" data-target="logout"
+                >Cerrar Sesión</a>
+            </li>
+ 
           </ul>
         </div>
       </nav>

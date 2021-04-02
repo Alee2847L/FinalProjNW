@@ -1,10 +1,10 @@
 <h1>{{mode_dsc}}</h1>
 <section>
     <form action="index.php?page=mnt_dispositivo&mode={{mode}}&idDispositivo={{idDispositivo}}" method="POST">
+
         <section>
-            <label for="idDispositivo">Id Dispositivo</label>
-            <input type="hidden" id="idDispositivo" name="idDispositivo" value="{{idDispositivo}}" />
-            <input type="text" readonly name="idDispositivoddummy" value="{{idDispositivo}}" />
+            <label for="idDispositivo">idDispositivo</label>
+            <input type="text" {{readonly}} name="idDispositivo" value="{{idDispositivo}}" maxlength="45" placeholder="idDispositivo" />
         </section>
         <section>
             <label for="nombre">nombre</label>

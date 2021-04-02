@@ -74,7 +74,7 @@
                    Le apoyaremos via Telefonica y si usted lo solicita, hacemos una visita
                    a su lugar de preferencia
                   </p>
-                  <a href="#" class="btn">Entrar<i class="fas fa-arrow-right"></i>
+                  <a class="btn">Entrar<i class="fas fa-arrow-right"></i>
                   </a>
                     </div>
                 </div>
@@ -94,7 +94,6 @@
                             <p>
                                 Contamos con marcas como ser Samsung de baja, media y alta Gama, Iphone de baja, media y alta gama, tambien contamos con dispositivos huawei
                             </p>
-
                             <a href="#" class="btn">Entrar<i class="fas fa-arrow-right"></i>
                   </a>
                         </div>
