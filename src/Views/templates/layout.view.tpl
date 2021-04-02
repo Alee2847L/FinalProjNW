@@ -18,8 +18,46 @@
       <nav class="blue darken-2">
         <div class="nav-wrapper container">
           <a href="index.php" class="brand-logo">SysTech <i class="far fa-lightbulb material-icons left"></i></a>
+          <a href="#" data-target="menu-side" class="sidenav-trigger">
+            <i class="material-icons">menu</i>
+          </a>
           <ul class="right hide-on-med-and-down">
             <li>
+              <a href="index.php"
+                ><i class="fas fa-home material-icons left"></i>Inicio</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-trigger" id="btnmovil" data-target="Movil1"
+                >Móviles<i class="fas fa-mobile material-icons left"></i></i></a
+              >
+              <script>
+                      document.addEventListener("DOMContentLoaded", function () {
+                      document.getElementById("btnmovil").addEventListener("click", function (e) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      window.location.assign("index.php?page=mnt_dispositivos");
+                      });
+                      });
+                  </script>
+            </li>
+            <li>
+              <a class="dropdown-trigger" href="#" data-target="Tecnologia1"
+                >Computadoras<i class="fas fa-laptop material-icons left"></i>
+                </a
+              >
+            </li>
+            <li>
+              <a class="dropdown-trigger" href="#" data-target="Servicios"
+                >Servicios<i class="fas fa-briefcase aterial-icons left"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <ul class="sidenav" id="menu-side">
+      <li>
               <a href="index.php"
                 ><i class="fas fa-home material-icons left"></i>Inicio</a
               >
@@ -39,10 +77,8 @@
               <a class="dropdown-trigger" href="#" data-target="Servicios"
                 >Servicios<i class="fas fa-briefcase aterial-icons left"></i></a>
             </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+    </ul>
+
 
     <!-- Movil -->
 

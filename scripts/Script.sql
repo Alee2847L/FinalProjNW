@@ -11,13 +11,13 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema NegociosWebdb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `NegociosWebdb` DEFAULT CHARACTER SET utf8 ;
-USE `NegociosWebdb` ;
+CREATE SCHEMA IF NOT EXISTS `nwdb` DEFAULT CHARACTER SET utf8 ;
+USE `nwdb` ;
 
 -- -----------------------------------------------------
 -- Table `NegociosWebdb`.`Categorias`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `NegociosWebdb`.`Categorias` (
+CREATE TABLE IF NOT EXISTS `nwdb`.`Categorias` (
   `idCategoria` INT NOT NULL,
   `NombreCategoria` VARCHAR(45) NULL,
   PRIMARY KEY (`idCategoria`))
@@ -27,7 +27,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `NegociosWebdb`.`Dispositivos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `NegociosWebdb`.`Dispositivos` (
+CREATE TABLE IF NOT EXISTS `nwdb`.`Dispositivos` (
   `idDispositivo` INT NOT NULL,
   `Nombre` VARCHAR(45) NULL,
   `Marca` VARCHAR(45) NULL,
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `NegociosWebdb`.`Dispositivos` (
   INDEX `fk_Dispositivos_Categorias1_idx` (`Categorias_idCategoria` ASC) VISIBLE,
   CONSTRAINT `fk_Dispositivos_Categorias1`
     FOREIGN KEY (`Categorias_idCategoria`)
-    REFERENCES `NegociosWebdb`.`Categorias` (`idCategoria`)
+    REFERENCES `nwdb`.`Categorias` (`idCategoria`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -48,7 +48,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `NegociosWebdb`.`Usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `NegociosWebdb`.`Usuarios` (
+CREATE TABLE IF NOT EXISTS `nwdb`.`Usuarios` (
   `idUsuario` INT NOT NULL,
   `Nombre Usuario` VARCHAR(150) NULL,
   `Tipo Usuario` VARCHAR(45) NULL,
@@ -62,7 +62,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `NegociosWebdb`.`Ciudades`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `NegociosWebdb`.`Ciudades` (
+CREATE TABLE IF NOT EXISTS `nwdb`.`Ciudades` (
   `idCiudad` INT NOT NULL,
   `NombreCiudad` VARCHAR(45) NULL,
   PRIMARY KEY (`idCiudad`))
@@ -72,7 +72,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `NegociosWebdb`.`Servicios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `NegociosWebdb`.`Servicios` (
+CREATE TABLE IF NOT EXISTS `nwdb`.`Servicios` (
   `idServicio` INT NOT NULL,
   `Usuarios_idUsuario` INT NOT NULL,
   `Dispositivos_idDispositivo` INT NOT NULL,
@@ -87,17 +87,17 @@ CREATE TABLE IF NOT EXISTS `NegociosWebdb`.`Servicios` (
   INDEX `fk_Servicios_Ciudades1_idx` (`Ciudades_idCiudad` ASC) VISIBLE,
   CONSTRAINT `fk_Servicios_Usuarios1`
     FOREIGN KEY (`Usuarios_idUsuario`)
-    REFERENCES `NegociosWebdb`.`Usuarios` (`idUsuario`)
+    REFERENCES `nwdb`.`Usuarios` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Servicios_Dispositivos1`
     FOREIGN KEY (`Dispositivos_idDispositivo`)
-    REFERENCES `NegociosWebdb`.`Dispositivos` (`idDispositivo`)
+    REFERENCES `nwdb`.`Dispositivos` (`idDispositivo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Servicios_Ciudades1`
     FOREIGN KEY (`Ciudades_idCiudad`)
-    REFERENCES `NegociosWebdb`.`Ciudades` (`idCiudad`)
+    REFERENCES `nwdb`.`Ciudades` (`idCiudad`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -106,7 +106,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `NegociosWebdb`.`Compras`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `NegociosWebdb`.`Compras` (
+CREATE TABLE IF NOT EXISTS `nwdb`.`Compras` (
   `idCompra` INT NOT NULL,
   `Usuarios_idUsuario` INT NOT NULL,
   `Dispositivos_idDispositivo` INT NOT NULL,
@@ -119,12 +119,12 @@ CREATE TABLE IF NOT EXISTS `NegociosWebdb`.`Compras` (
   INDEX `fk_Compras_Dispositivos1_idx` (`Dispositivos_idDispositivo` ASC) VISIBLE,
   CONSTRAINT `fk_Compras_Usuarios`
     FOREIGN KEY (`Usuarios_idUsuario`)
-    REFERENCES `NegociosWebdb`.`Usuarios` (`idUsuario`)
+    REFERENCES `nwdb`.`Usuarios` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Compras_Dispositivos1`
     FOREIGN KEY (`Dispositivos_idDispositivo`)
-    REFERENCES `NegociosWebdb`.`Dispositivos` (`idDispositivo`)
+    REFERENCES `nwdb`.`Dispositivos` (`idDispositivo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -133,7 +133,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `NegociosWebdb`.`Proveedores`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `NegociosWebdb`.`Proveedores` (
+CREATE TABLE IF NOT EXISTS `nwdb`.`Proveedores` (
   `idProveedor` INT NOT NULL,
   `NombreProveedor` VARCHAR(150) NULL,
   `CorreoProveedor` VARCHAR(100) NULL,
@@ -146,19 +146,19 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `NegociosWebdb`.`Proveedores/Dispositivos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `NegociosWebdb`.`Proveedores/Dispositivos` (
+CREATE TABLE IF NOT EXISTS `nwdb`.`Proveedores/Dispositivos` (
   `Dispositivos_idDispositivo` INT NOT NULL,
   `Proveedores_idProveedor` INT NOT NULL,
   INDEX `fk_Proveedores/Dispositivos_Dispositivos1_idx` (`Dispositivos_idDispositivo` ASC) VISIBLE,
   INDEX `fk_Proveedores/Dispositivos_Proveedores1_idx` (`Proveedores_idProveedor` ASC) VISIBLE,
   CONSTRAINT `fk_Proveedores/Dispositivos_Dispositivos1`
     FOREIGN KEY (`Dispositivos_idDispositivo`)
-    REFERENCES `NegociosWebdb`.`Dispositivos` (`idDispositivo`)
+    REFERENCES `nwdb`.`Dispositivos` (`idDispositivo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Proveedores/Dispositivos_Proveedores1`
     FOREIGN KEY (`Proveedores_idProveedor`)
-    REFERENCES `NegociosWebdb`.`Proveedores` (`idProveedor`)
+    REFERENCES `nwdb`.`Proveedores` (`idProveedor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
