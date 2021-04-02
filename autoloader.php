@@ -4,7 +4,7 @@
  *
  * @category Public
  * @package  Controllers
- * @author   Clase NW2021
+ * @author   Orlando J Betancourth <orlando.betancourth@gmail.com>
  * @license  MIT http://
  * @version  CVS:1.0.0
  * @link     http://

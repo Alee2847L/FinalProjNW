@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.social-footer a {
+    padding: 1em;
+    margin-bottom: 0.5em;
+}
+
+@media (min-width: 768px) {
+    .social-footer i {
+        font-size: 2rem;
+    }
+    .social-footer a:hover {
+        background-color: #424242;
+    }
+    .social-footer a:hover i {
+        font-size: 2.5rem;
+    }
+}
+
+.parallax-container i {
+    font-size: 1em;
+}
+
+p {
+    text-align: justify;
+}
+
+.creditos-img h6 {
+    font-size: 0.6em;
+    margin: 0em;
+    padding: 0em;
+    color: darkgrey;
+}
+
+.sugerimos .card {
+    height: 30em;
+}
+
+.sugerimos img {
+    height: 10em;
+}
+
+.creditos-img {
+    font-size: 1em;
+    margin: 0em;
+    padding: 0em;
+    color: rgb(255, 219, 219);
+}
+
+.img-por {
+    border-radius: 1em;
+    width: 90%;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .img-por {
+        border-radius: 1em;
+        width: 90%;
+        height: auto;
+    }
+}
+
+.card .card-content {
+    padding: 24px;
+    border-radius: 0 0 2px 2px;
+    padding: 1em;
+}
