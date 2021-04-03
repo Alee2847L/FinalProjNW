@@ -25,7 +25,7 @@
                                                         document.getElementById("btncat").addEventListener("click", function(e) {
                                                             e.preventDefault();
                                                             e.stopPropagation();
-                                                            window.location.assign("index.php?page=mnt_dispositivos");
+                                                            window.location.assign("index.php?page=mnt_categorias");
                                                         });
                                                     });
                                                 </script>
