@@ -62,7 +62,7 @@
                                 <div class="col s12 m4">
                                     <div class="card z-depth-1">
                                         <div class="card-image">
-                                            <img src="img/asistencia.png" alt="Imagen de asistencia" />
+                                            <img src="img/categoria.png" alt="Imagen de asistencia" />
                                             
                 </div>
 
