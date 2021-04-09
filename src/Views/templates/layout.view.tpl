@@ -56,11 +56,12 @@
             </li>
             <li>
               <a class="dropdown-trigger" href="#" data-target="usuarios"
-                >Usuarios<i class="fas fa-users left"></i></a>
+              <li><a href="index.php?page=mnt_usuarios">Usuarios</a></li>
             </li>
             <li>
               <a class="dropdown-trigger" href="#" data-target="login"
-                >Iniciar Sesión|</a>
+                    <li><a href="index.php?page=sec_login">Iniciar Sesión</a></li>
+                    
             </li>
             <li>
               <a class="dropdown-trigger" href="#" data-target="logout"
