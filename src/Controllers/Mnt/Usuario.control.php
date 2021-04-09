@@ -7,9 +7,6 @@ class Usuario extends \Controllers\PublicController
     private $username = "";
     private $userest = "";
     private $useremail = "";
-    private $catest_ACT = "";
-    private $catest_INA = "";
-    private $catest_PLN = "";
 
     private $mode_dsc = "";
     private $mode_adsc = array(
