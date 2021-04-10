@@ -59,7 +59,7 @@
                                 <div class="col m4" id="btnproveedores">
                                     <div class="card z-depth-1">
                                         <div class="card-image">
-                                            <img src="img/devices.png" alt="Imagen de dispositivos de venta" />
+                                            <img src="img/proveedores.png" alt="Imagen de dispositivos de venta" />
                                         </div>
                                         <div>
                                             <li>
