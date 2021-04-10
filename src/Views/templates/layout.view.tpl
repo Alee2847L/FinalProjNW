@@ -15,7 +15,7 @@
      <!-- Menu de navegacion -->
 
     <div class="navbar-fixed">
-      <nav class="blue darken-2">
+      <nav class="cyan lighten-1">
         <div class="nav-wrapper container">
           <a href="index.php" class="brand-logo">SysTech <i class="far fa-lightbulb material-icons left"></i></a>
           <a href="#" data-target="menu-side" class="sidenav-trigger">
@@ -169,7 +169,7 @@
 </body>
 
 <!-- Footer -->
-<footer class="page-footer blue darken-2">
+<footer class="page-footer cyan lighten-1">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">

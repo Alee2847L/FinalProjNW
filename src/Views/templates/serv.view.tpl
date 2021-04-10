@@ -10,38 +10,33 @@
                         <h3 class="center-align"><b>Servicios</b></h3>
                         <div class="container">
                             <div class="row">
-                                <div class="col m6" id="btncat">
+                                <div class="col m4" id="btncat">
                                     <div class="card z-depth-1">
                                         <div class="card-image">
-                                            <img src="img/asistencia.png" alt="Imagen de asistencia" />
-
-
+                                            <img src="img/serv.png" alt="Imagen de asistencia" />
                                         </div>
                                         <div>
-                                            <li>
-                                                <h3 class="center-align"><b>Asistencia Tecnica</b></h3>
+                                                <h3 class="center-align"><b>Servicios</b></h3>
                                                 <script>
                                                     document.addEventListener("DOMContentLoaded", function() {
                                                         document.getElementById("btncat").addEventListener("click", function(e) {
                                                             e.preventDefault();
                                                             e.stopPropagation();
-                                                            window.location.assign("index.php?page=mnt_dispositivos");
+                                                            window.location.assign("index.php?page=mnt_servicios");
                                                         });
                                                     });
                                                 </script>
-                                            </li>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col m6" id="btndispositivo">
+                                <div class="col m4" id="btndispositivo">
                                     <div class="card z-depth-1">
                                         <div class="card-image">
-                                            <img src="img/devices.png" alt="Imagen de dispositivos de venta" />
+                                            <img src="img/asis.png" alt="Imagen de dispositivos de venta" />
                                         </div>
                                         <div>
-                                            <li>
-                                                <h3 class="center-align"><b>Atencion al cliente</b></h3>
+                                                <h3 class="center-align"><b>Ventas</b></h3>
                                                 <script>
                                                     document.addEventListener("DOMContentLoaded", function() {
                                                         document.getElementById("btndispositivo").addEventListener("click", function(e) {
@@ -51,7 +46,25 @@
                                                         });
                                                     });
                                                 </script>
-                                            </li>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col m4" id="btnlugar">
+                                    <div class="card z-depth-1">
+                                        <div class="card-image">
+                                            <img src="img/lugar.png" alt="Imagen de lugar de pedido" />
+                                        </div>
+                                        <div>
+                                                <h3 class="center-align"><b>Lugar</b></h3>
+                                                <script>
+                                                    document.addEventListener("DOMContentLoaded", function() {
+                                                        document.getElementById("btnlugar").addEventListener("click", function(e) {
+                                                            e.preventDefault();
+                                                            e.stopPropagation();
+                                                            window.location.assign("index.php?page=mnt_lugar");
+                                                        });
+                                                    });
+                                                </script>
                                         </div>
                                     </div>
                                 </div>
