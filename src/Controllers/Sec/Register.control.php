@@ -10,6 +10,7 @@ class Register extends PublicController
 {
     private $txtEmail = "";
     private $txtPswd = "";
+    private $txtname = "";
     private $errorEmail ="";
     private $errorPswd = "";
     private $hasErrors = false;
@@ -18,7 +19,8 @@ class Register extends PublicController
 
         if ($this->isPostBack()) {
             $this->txtEmail = $_POST["txtEmail"];
-            $this->txtPswd = $_POST["txtPswd"];
+            $this->txtPswd = $_POST["txtPswd"];    
+            $this->txtname = $_POST["txtname"];           
             //validaciones
             if (!(Validators::IsValidEmail($this->txtEmail))) {
                 $this->errorEmail = "El correo no tiene el formato adecuado";
@@ -31,7 +33,7 @@ class Register extends PublicController
 
             if (!$this->hasErrors) {
                 try{
-                    if (\Dao\Security\Security::newUsuario($this->txtEmail, $this->txtPswd)) {
+                    if (\Dao\Security\Security::newUsuario($this->txtEmail, $this->txtPswd, $this->txtname)) {
                         \Utilities\Site::redirectToWithMsg("index.php?page=sec_login", "¡Usuario Registrado Satisfactoriamente!");
                     }
                 } catch (Error $ex){
