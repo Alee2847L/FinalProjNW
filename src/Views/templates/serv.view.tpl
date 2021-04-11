@@ -61,7 +61,7 @@
                                                         document.getElementById("btnlugar").addEventListener("click", function(e) {
                                                             e.preventDefault();
                                                             e.stopPropagation();
-                                                            window.location.assign("index.php?page=mnt_lugar");
+                                                            window.location.assign("index.php?page=mnt_lugares");
                                                         });
                                                     });
                                                 </script>
