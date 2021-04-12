@@ -1,4 +1,4 @@
-<h1>{{mode_dsc}}</h1>
+<h4>{{mode_dsc}}</h4>
 <section>
   <form action="index.php?page=mnt_usuario&mode={{mode}}&usercod={{usercod}}"
     method="POST" >
@@ -12,7 +12,7 @@
       <input type="text" {{readonly}} name="username" value="{{username}}" maxlength="45" placeholder="Descripcion Usuarios"/>
     </section>
     <section>
-      <label for="userest">Estado</label>
+      <label for="userest">Correo Usurio</label>
       <select id="userest" name="userest" {{if readonly}}disabled{{endif readonly}}>
         <option value="ACT" {{userest_ACT}}>Activo</option>
         <option value="INA" {{userest_INA}}>Inactivo</option>
@@ -23,6 +23,32 @@
       <input type="email" name="useremail" value="{{useremail}}" maxlength="45" placeholder="email Usuario"/>
     </section>
         <section>
+        </section>
+      <section>
+      <label for="userfching">userfching</label>
+      <input type="date" name="userfching" value="{{userfching}}" maxlength="45" placeholder="userfching"/>
+    </section>
+       <section>
+      <label for="userpswdest">userpswdest</label>
+      <input type="text" name="userpswdest" value="{{userpswdest}}" maxlength="45" placeholder="userpswdest"/>
+    </section>
+      <section>
+      <label for="userpswdexp">userpswdexp</label>
+      <input type="date" name="userpswdexp" value="{{userpswdexp}}" maxlength="45" placeholder="userpswdexp"/>
+    </section>
+      <section>
+      <label for="useractcod">useractcod</label>
+      <input type="text" name="useractcod" value="{{useractcod}}" maxlength="45" placeholder="useractcod"/>
+    </section>
+      <section>
+      <label for="userpswdchg">userpswdchg</label>
+      <input type="date" name="userpswdchg" value="{{userpswdchg}}" maxlength="45" placeholder="userpswdchg"/>
+    </section>
+      <section>
+      <label for="usertipo">usertipo</label>
+      <input type="text" name="usertipo" value="{{usertipo}}" maxlength="45" placeholder="usertipo"/>
+    </section>
+    <section>
       </select>
     </section>
     {{if hasErrors}}

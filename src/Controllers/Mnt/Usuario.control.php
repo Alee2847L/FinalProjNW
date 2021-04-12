@@ -7,6 +7,15 @@ class Usuario extends \Controllers\PublicController
     private $username = "";
     private $userest = "";
     private $useremail = "";
+    private $userfching = "";
+    private $userpswdest = "";
+    private $userpswdexp = "";
+    private $useractcod = "";
+    private $userpswdchg = "";
+    private $usertipo = "";
+    private $catest_ACT = "";
+    private $catest_INA = "";
+    private $catest_PLN = "";
 
     private $mode_dsc = "";
     private $mode_adsc = array(
@@ -48,7 +57,9 @@ class Usuario extends \Controllers\PublicController
             if (!$this->hasErrors) {
                 switch ($this->mode){
                 case "INS":
-                    if (\Dao\Mnt\Usuarios::insert($this->username, $this->userest, $this->useremail)) {
+                    if (\Dao\Mnt\Usuarios::insert($this->username, $this->userest, $this->useremail,
+                    $this->userfching, $this->userpswdest, $this->userpswdexp,
+                    $this->useractcod, $this->userpswdchg, $this->usertipo)) {
                         \Utilities\Site::redirectToWithMsg(
                             "index.php?page=mnt_usuarios",
                             "¡Usuarios Agregada Satisfactoriamente!"
@@ -56,7 +67,10 @@ class Usuario extends \Controllers\PublicController
                     }
                     break;
                 case "UPD":
-                    if (\Dao\Mnt\Usuarios::update($this->username, $this->userest,$this->useremail, $this->usercod)) {
+                    if (\Dao\Mnt\Usuarios::update($this->username, $this->userest,
+                    $this->userfching, $this->userpswdest, $this->userpswdexp,$this->useremail, 
+                    $this->useractcod, $this->userpswdchg, $this->usertipo,
+                    $this->usercod)) {
                         \Utilities\Site::redirectToWithMsg(
                             "index.php?page=mnt_usuarios",
                             "¡Usuarios Actualizada Satisfactoriamente!"
@@ -87,6 +101,12 @@ class Usuario extends \Controllers\PublicController
             $this->username = $_data["username"];
             $this->userest = $_data["userest"];
             $this->useremail = $_data["useremail"];
+            $this->userfching = $_data["userfching"];
+            $this->userpswdest = $_data["userpswdest"];
+            $this->userpswdexp = $_data["userpswdexp"];
+            $this->useractcod = $_data["useractcod"];
+            $this->userpswdchg = $_data["userpswdchg"];
+            $this->usertipo = $_data["usertipo"];
             
             $this->_setViewData();
         }
@@ -98,6 +118,13 @@ class Usuario extends \Controllers\PublicController
         $this->username = isset($_POST["username"]) ? $_POST["username"] : "" ;
         $this->userest = isset($_POST["userest"]) ? $_POST["userest"] : "ACT" ;
         $this->useremail = isset($_POST["useremail"]) ? $_POST["useremail"] : "" ;
+        $this->userfching = isset($_POST["userfching"]) ? $_POST["userfching"] : "" ;
+        $this->userpswdest = isset($_POST["userpswdest"]) ? $_POST["userpswdest"] : "" ;
+        $this->userpswdexp = isset($_POST["userpswdexp"]) ? $_POST["userpswdexp"] : "" ;
+        $this->useractcod = isset($_POST["useractcod"]) ? $_POST["useractcod"] : "" ;
+        $this->userpswdchg = isset($_POST["userpswdchg"]) ? $_POST["userpswdchg"] : "" ;
+        $this->usertipo = isset($_POST["usertipo"]) ? $_POST["usertipo"] : "" ;
+
         //validaciones
         //aplicar todas la reglas de negocio
         if (preg_match('/^\s*$/', $this->username)) {
@@ -116,7 +143,13 @@ class Usuario extends \Controllers\PublicController
         $this->mode_dsc = sprintf(
             $this->mode_adsc[$this->mode],
             $this->usercod,
-            $this->username
+            $this->username,
+            $this->userfching,
+            $this->userpswdest,
+            $this->userpswdexp,
+            $this->useractcod,
+            $this->userpswdchg,
+            $this->usertipo
         );
         $this->readonly = ($this->mode =="DEL" || $this->mode=="DSP") ? "readonly":"";
         $this->showaction = !($this->mode == "DSP");
