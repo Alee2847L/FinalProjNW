@@ -10,7 +10,6 @@
  * @link     http://
  */
 namespace Controllers;
-
 /**
  * Private Access Controller Base Class
  *
@@ -24,22 +23,44 @@ abstract class PrivateController extends PublicController
 {
     private function _isAuthorized()
     {
-        throw new PrivateNoAuthException();
+        //throw new PrivateNoAuthException();
+        $isAuthorized = \Utilities\Security::isAuthorized(
+            \Utilities\Security::getUserId(),
+            $this->name
+        );
+        if (!$isAuthorized){
+            throw new PrivateNoAuthException();
+        }
     }
     private function _isAuthenticated()
     {
-        throw new PrivateNoLoggedException();
+        //throw new PrivateNoLoggedException();
+        if (!\Utilities\Security::isLogged()){
+            throw new PrivateNoLoggedException();
+        }
     }
-    private function _isFeatureAutorized($feature) :boolean
+    //private function _isFeatureAutorized($feature) :boolean
+    protected function isFeatureAutorized($feature) :boolean
     {
-        return false;
+        //return false;
+        return \Utilities\Security::isAuthorized(
+            \Utilities\Security::getUserId(),
+            $feature
+        );
     }
     public function __construct()
     {
         $this->name = get_class($this);
         $this->_isAuthenticated();
         $this->_isAuthorized();
+
+        $layoutFile = \Utilities\Context::getContextByKey("PRIVATE_LAYOUT");
+        if ($layoutFile !== "") {
+            \Utilities\Context::setContext(
+                "layoutFile",
+                $layoutFile
+            );
+        }
     }
 }
-
 ?>
