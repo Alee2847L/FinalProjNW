@@ -27,13 +27,13 @@
     <div class="navbar-fixed">
       <nav class="cyan lighten-1">
         <div class="nav-wrapper container">
-          <a href="index.php" class="brand-logo">SysTech <i class="far fa-lightbulb material-icons left"></i></a>
+          <a href="index.php?page=iniciopublico" class="brand-logo">SysTech <i class="far fa-lightbulb material-icons left"></i></a>
           <a href="#" data-target="menu-side" class="sidenav-trigger">
             <i class="material-icons">menu</i>
           </a>
           <ul class="right hide-on-med-and-down">
             <li>
-              <a href="index.php"><i class="fas fa-home material-icons left"></i>Inicio</a>
+              <a href="index.php?page=iniciopublico"><i class="fas fa-home material-icons left"></i>Inicio</a>
             </li>
             {{with login}}
                <li><span>{{userName}}</span></li>
@@ -43,7 +43,7 @@
               <a href="index.php?page=sec_login">iniciar Seción</a>
             </li>
             <li>
-              <a href="index.php">Salir</a>
+              <a href="index.php?page=sec_login">Salir</a>
             </li>
  
           </ul>

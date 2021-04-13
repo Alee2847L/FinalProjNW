@@ -17,7 +17,7 @@
     <div class="navbar-fixed">
       <nav class="cyan lighten-1">
         <div class="nav-wrapper container">
-          <a href="index.php" class="brand-logo">SysTech <i class="far fa-lightbulb material-icons left"></i></a>
+          <a href="index.php?page=iniciopublico" class="brand-logo">SysTech <i class="far fa-lightbulb material-icons left"></i></a>
           <a href="#" data-target="menu-side" class="sidenav-trigger">
             <i class="material-icons">menu</i>
           </a>
