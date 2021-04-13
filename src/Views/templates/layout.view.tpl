@@ -35,6 +35,9 @@
             <li>
               <a href="index.php"><i class="fas fa-home material-icons left"></i>Inicio</a>
             </li>
+            {{with login}}
+               <li><span>{{userName}}</span></li>
+            {{endwith login}}
 
             <li>
               <a href="index.php?page=sec_login">iniciar Seción</a>
