@@ -1,7 +1,7 @@
 <?php 
 namespace Controllers\Mnt;
 
-class Venta extends \Controllers\PublicController
+class Venta extends \Controllers\PrivateController
 {
     private $idventas = 0;
     private $usercod = 0;

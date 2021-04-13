@@ -1,7 +1,7 @@
 <?php 
 namespace Controllers\Mnt;
 
-class Usuario extends \Controllers\PublicController
+class Usuario extends \Controllers\PrivateController
 {
     private $usercod = 0;
     private $username = "";

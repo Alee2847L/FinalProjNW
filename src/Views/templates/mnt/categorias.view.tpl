@@ -7,7 +7,11 @@
       <tr>
         <th>Código</th>
         <th>Categoría</th>
-        <th><button id="btnAdd">Nuevo</button></th>
+        <th>
+          {{if new_enabled}}
+            <button id="btnAdd">Nuevo</button>
+          {{endif new_enabled}}
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -16,18 +20,22 @@
         <td>{{idCategoria}}</td>
         <td><a href="index.php?page=mnt_categoria&mode=DSP&idCategoria={{idCategoria}}">{{nombreCategoria}}</a></td>
         <td>
+        {{if edit_enabled}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_categoria"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="idCategoria" value={{idCategoria}} />
               <button type="submit">Editar</button>
           </form>
+        {{endif edit_enabled}}
+        {{if delete_enabled}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_categoria"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="idCategoria" value={{idCategoria}} />
               <button type="submit">Eliminar</button>
           </form>
+          {{endif delete_enabled}}
         </td>
       </tr>
       {{endfor items}}

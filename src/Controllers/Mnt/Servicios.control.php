@@ -1,7 +1,7 @@
 <?php 
 namespace Controllers\Mnt;
 
-class Servicios extends \Controllers\PublicController
+class Servicios extends \Controllers\PrivateController
 {
     public function run() :void
     {

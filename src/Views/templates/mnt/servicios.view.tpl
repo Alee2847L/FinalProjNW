@@ -12,8 +12,11 @@
         <th>Tipo Servicio</th>
         <th>Descripcion</th>
         <th>precio</th>
-        <th>Ciudad solicitud</th>
-        <th><button id="btnAdd">Nuevo</button></th>
+        <th>Ciudad solicitud</th><th>
+          {{if new_enabled}}
+            <button id="btnAdd">Nuevo</button>
+          {{endif new_enabled}}
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -28,18 +31,22 @@
         <td>{{precioServicio}}</td>
         <td>{{ciudades_idCiudad}}</td>
         <td>
+        {{if edit_enabled}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_servicio"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="idServicio" value={{idServicio}} />
               <button type="submit">Editar</button>
           </form>
+        {{endif edit_enabled}}
+        {{if delete_enabled}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_servicio"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="idServicio" value={{idServicio}} />
               <button type="submit">Eliminar</button>
           </form>
+          {{endif delete_enabled}}
         </td>
       </tr>
       {{endfor items}}

@@ -1,7 +1,7 @@
 <?php 
 namespace Controllers\Mnt;
 
-class Servicio extends \Controllers\PublicController
+class Servicio extends \Controllers\PrivateController
 {
     private $idServicio = 0;
     private $usuarios_idUsuario = 0;

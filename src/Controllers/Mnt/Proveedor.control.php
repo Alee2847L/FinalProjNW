@@ -1,7 +1,7 @@
 <?php 
 namespace Controllers\Mnt;
 
-class Proveedor extends \Controllers\PublicController
+class Proveedor extends \Controllers\PrivateController
 {
     private $idProveedor = 0;
     private $nombreProveedor = "";

@@ -1,7 +1,7 @@
 <?php 
 namespace Controllers\Mnt;
 
-class Lugares extends \Controllers\PublicController
+class Lugares extends \Controllers\PrivateController
 {
     public function run() :void
     {

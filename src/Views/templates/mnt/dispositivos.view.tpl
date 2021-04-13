@@ -12,7 +12,11 @@
         <th>IDCategoria</th>
         <th>Precio</th>
         <th>stock</th>
-        <th><button id="btnAdd">Nuevo</button></th>
+        <th>
+          {{if new_enabled}}
+            <button id="btnAdd">Nuevo</button>
+          {{endif new_enabled}}
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -26,7 +30,7 @@
         <td>{{precioUnitario}}</td>
         <td>{{stock}}</td>
 
-
+        {{if edit_enabled}}
         <td>
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_dispositivo"/>
@@ -34,12 +38,15 @@
               <input type="hidden" name="idDispositivo" value={{idDispositivo}} />
               <button type="submit">Editar</button>
           </form>
+        {{endif edit_enabled}}
+        {{if delete_enabled}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_dispositivo"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="idDispositivo" value={{idDispositivo}} />
               <button type="submit">Eliminar</button>
           </form>
+          {{endif delete_enabled}}
         </td>
       </tr>
       {{endfor items}}

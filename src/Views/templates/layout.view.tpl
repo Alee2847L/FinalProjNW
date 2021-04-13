@@ -23,49 +23,14 @@
           </a>
           <ul class="right hide-on-med-and-down">
             <li>
-              <a href="index.php"
-                ><i class="fas fa-home material-icons left"></i>Inicio</a
-              >
+              <a href="index.php"><i class="fas fa-home material-icons left"></i>Inicio</a>
+            </li>
+
+            <li>
+              <a href="index.php?page=sec_login">iniciar Seción</a>
             </li>
             <li>
-              <a class="dropdown-trigger" id="btndisp" data-target="dispositivos"
-                >Dispositivos<i class="fas fa-laptop-house left"></i></a
-              >
-              <script>
-                      document.addEventListener("DOMContentLoaded", function () {
-                      document.getElementById("btndisp").addEventListener("click", function (e) {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      window.location.assign("index.php?page=disp");
-                      });
-                      });
-                  </script>
-            </li>
-            <li>
-              <a class="dropdown-trigger" id="btnserv" data-target="Servicios"
-                >Servicios<i class="fas fa-briefcase aterial-icons left"></i></a>
-                <script>
-                      document.addEventListener("DOMContentLoaded", function () {
-                      document.getElementById("btnserv").addEventListener("click", function (e) {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      window.location.assign("index.php?page=serv");
-                      });
-                      });
-                  </script>
-            </li>
-            <li>
-              <a class="dropdown-trigger" href="#" data-target="usuarios"
-              <li><a href="index.php?page=mnt_usuarios">Usuarios</a></li>
-            </li>
-            <li>
-              <a class="dropdown-trigger" href="#" data-target="login"
-                    <li><a href="index.php?page=sec_login">Iniciar Sesión</a></li>
-                    
-            </li>
-            <li>
-              <a class="dropdown-trigger" href="#" data-target="logout"
-                >Cerrar Sesión</a>
+              <a href="index.php">Salir</a>
             </li>
  
           </ul>

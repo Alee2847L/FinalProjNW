@@ -20,7 +20,7 @@ namespace Controllers;
  * @license  MIT http://
  * @link     http://
  */
-class Disp extends PublicController
+class Disp extends PrivateController
 {
     /**
      * Disp run method

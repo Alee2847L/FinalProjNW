@@ -1,7 +1,7 @@
 <?php 
 namespace Controllers\Mnt;
 
-class Dispositivo extends \Controllers\PublicController
+class Dispositivo extends \Controllers\PrivateController
 {
     private $idDispositivo = 0;
     private $nombre = "";

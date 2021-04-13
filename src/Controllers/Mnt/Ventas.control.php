@@ -1,7 +1,7 @@
 <?php 
 namespace Controllers\Mnt;
 
-class Ventas extends \Controllers\PublicController
+class Ventas extends \Controllers\PrivateController
 {
     public function run() :void
     {
