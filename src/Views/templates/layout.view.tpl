@@ -4,6 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{SITE_TITLE}}</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/css/style.css" />
+  {{foreach SiteLinks}}
+    <link rel="stylesheet" href="{{this}}" />
+  {{endfor SiteLinks}}
+  {{foreach BeginScripts}}
+    <script src="{{this}}"></script>
+  {{endfor BeginScripts}}
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <!-- Iconos de FontAwesome solo para las redes sociales -->
