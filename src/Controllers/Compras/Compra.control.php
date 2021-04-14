@@ -44,7 +44,7 @@ class Compra extends \Controllers\PublicController
         $this->mode = isset($_GET["mode"])?$_GET["mode"]:"";
         $this->idventas = isset($_GET["idventas"])?$_GET["idventas"]:0;
         if (!$this->isPostBack()) {
-            if ($this->mode !== "INS") {
+            if ($this->mode == "INS") {
                 $this->_load();
             } else {
                 $this->mode_dsc = $this->mode_adsc[$this->mode];
@@ -89,6 +89,7 @@ class Compra extends \Controllers\PublicController
     {
             $_data = \Dao\Mnt\Dispositivos::getOne($this->idDisp);
             if ($_data) {
+                $this->idDisp = $_data["idDispositivo"];
                 $this->precio = $_data["precioUnitario"];
                 $this->_setViewData();
             }

@@ -42,7 +42,7 @@
               <a href="index.php?page=compras_services"><i class="fas fa-hands-helping"></i>Servicios</a>
             </li>
             <li>
-              <a href="index.php?page=sec_login" >iniciar Seción</a>
+              <a href="index.php?page=sec_login" >iniciar Sesión</a>
             </li>
             <li>
               <a href="index.php?page=sec_login">Salir</a>

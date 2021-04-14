@@ -26,22 +26,22 @@
         <td>{{numeroProveedor}}</td>
         <td>{{direccionProveedor}}</td>
         <td>
-        {{if edit_enabled}}
+        {{if ~edit_enabled}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_proveedor"/>
               <input type="hidden" name="mode" value="UPD" />
               <input type="hidden" name="idProveedor" value={{idProveedor}} />
               <button type="submit">Editar</button>
           </form>
-        {{endif edit_enabled}}
-        {{if delete_enabled}}
+        {{endif ~edit_enabled}}
+        {{if ~delete_enabled}}
           <form action="index.php" method="get">
              <input type="hidden" name="page" value="mnt_proveedor"/>
               <input type="hidden" name="mode" value="DEL" />
               <input type="hidden" name="idProveedor" value={{idProveedor}} />
               <button type="submit">Eliminar</button>
           </form>
-          {{endif delete_enabled}}
+          {{endif ~delete_enabled}}
         </td>
       </tr>
       {{endfor items}}

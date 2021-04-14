@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="card-action center">
                                  <form action="index.php" method="get">
-                                    <input type="hidden" name="page" value="compras_compra"/>
+                                    <input type="hidden" name="page" value="checkout_checkout"/>
                                       <input type="hidden" name="mode" value="INS" />
                                       <input type="hidden" name="idDispositivo" value={{idDispositivo}} />
                                       <button type="submit" class="btn">Comprar ahora<i class="fas fa-arrow-right right"></i></button>

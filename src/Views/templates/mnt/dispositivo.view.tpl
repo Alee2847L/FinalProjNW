@@ -32,7 +32,7 @@
         </section>
         <section>
             <label for="urldip">Url imagen dispositivo</label>
-            <input type="text" {{readonly}} name="urldip" value="{{urldip}}" maxlength="45" placeholder="url de imagen del Dispositivo" />
+            <input type="text" {{readonly}} name="urldip" value="img\{{urldip}}.png" maxlength="45" placeholder="Coloque elnombre de la imagen" />
         </section>
         {{if hasErrors}}
         <section>

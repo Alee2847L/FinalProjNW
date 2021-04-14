@@ -23,6 +23,7 @@ class Compra extends \Dao\Table
         $fecha_actual = date("Y-m-d H:i:s");
         //asignacion a la variable para poder guardarla automaticamente
         $fechaFact = $fecha_actual;
+        
         $insstr = "insert into ventas (usercodp, idDisp, idServicio, precio, isv, total, fechaFact) values (:usercodp, :idDisp, :idServicio, :precio, :isv, :total, :fechaFact);";
         return self::executeNonQuery(
             $insstr,
