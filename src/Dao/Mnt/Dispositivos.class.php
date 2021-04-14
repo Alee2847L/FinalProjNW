@@ -15,20 +15,20 @@ class Dispositivos extends \Dao\Table
         return self::obtenerUnRegistro($sqlstr, array("idDispositivo"=>$idDispositivo));
     }
 
-    public static function insert($idDispositivo, $nombre, $marca, $serie, $categorias_idCategoria, $precioUnitario, $stock)
+    public static function insert($idDispositivo, $nombre, $marca, $serie, $categorias_idCategoria, $precioUnitario, $stock, $urldip)
     {
-        $insstr = "insert into dispositivos (idDispositivo, nombre, marca, serie, categorias_idCategoria, precioUnitario, stock) values (:idDispositivo, :nombre, :marca, :serie, :categorias_idCategoria, :precioUnitario, :stock);";
+        $insstr = "insert into dispositivos (idDispositivo, nombre, marca, serie, categorias_idCategoria, precioUnitario, stock, urldip) values (:idDispositivo, :nombre, :marca, :serie, :categorias_idCategoria, :precioUnitario, :stock, :urldip);";
         return self::executeNonQuery(
             $insstr,
-            array("idDispositivo"=>$idDispositivo, "nombre"=>$nombre, "marca"=>$marca, "serie"=>$serie, "categorias_idCategoria"=>$categorias_idCategoria, "precioUnitario"=>$precioUnitario, "stock"=>$stock)
+            array("idDispositivo"=>$idDispositivo, "nombre"=>$nombre, "marca"=>$marca, "serie"=>$serie, "categorias_idCategoria"=>$categorias_idCategoria, "precioUnitario"=>$precioUnitario, "stock"=>$stock, "urldip"=>$urldip)
         );
     }
-    public static function update($nombre, $marca, $serie, $categorias_idCategoria, $precioUnitario, $stock, $idDispositivo)
+    public static function update($nombre, $marca, $serie, $categorias_idCategoria, $precioUnitario, $stock, $urldip, $idDispositivo)
     {
-        $updsql = "update dispositivos set nombre = :nombre, marca = :marca, serie = :serie, categorias_idCategoria = :categorias_idCategoria, precioUnitario = :precioUnitario, stock = :stock where idDispositivo =:idDispositivo;";
+        $updsql = "update dispositivos set nombre = :nombre, marca = :marca, serie = :serie, categorias_idCategoria = :categorias_idCategoria, precioUnitario = :precioUnitario, stock = :stock, urldip = :urldip where idDispositivo =:idDispositivo;";
         return self::executeNonQuery(
             $updsql,
-            array("nombre"=>$nombre, "marca"=>$marca, "serie"=>$serie, "categorias_idCategoria"=>$categorias_idCategoria, "precioUnitario"=>$precioUnitario, "stock"=>$stock, "idDispositivo"=>$idDispositivo)
+            array("nombre"=>$nombre, "marca"=>$marca, "serie"=>$serie, "categorias_idCategoria"=>$categorias_idCategoria, "precioUnitario"=>$precioUnitario, "stock"=>$stock, "urldip"=>$urldip, "idDispositivo"=>$idDispositivo)
         );
     }
     public static function delete( $idDispositivo)

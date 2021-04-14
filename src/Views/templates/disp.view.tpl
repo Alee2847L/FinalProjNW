@@ -4,7 +4,6 @@
     <table>
         <thead>
             <tr>
-                <!-- Te sugerimos -->
                 <div class="sugerimos">
                     <div class="section">
                         <h3 class="center-align"><b>Dispositivos</b></h3>
@@ -13,12 +12,9 @@
                                 <div class="col m4" id="btncat">
                                     <div class="card z-depth-1">
                                         <div class="card-image">
-                                            <img src="img/asistencia.1.png" alt="Imagen de asistencia" />
-
-
+                                            <img src="img/cat.png" alt="Imagen de asistencia" />
                                         </div>
                                         <div>
-                                            <li>
                                                 <h3 class="center-align"><b>Categoria</b></h3>
                                                 <script>
                                                     document.addEventListener("DOMContentLoaded", function() {
@@ -29,7 +25,6 @@
                                                         });
                                                     });
                                                 </script>
-                                            </li>
                                         </div>
                                     </div>
                                 </div>
@@ -37,10 +32,9 @@
                                 <div class="col m4" id="btndispositivo">
                                     <div class="card z-depth-1">
                                         <div class="card-image">
-                                            <img src="img/devices.png" alt="Imagen de dispositivos de venta" />
+                                            <img src="img/dispo.png" alt="Imagen de dispositivos de venta" />
                                         </div>
                                         <div>
-                                            <li>
                                                 <h3 class="center-align"><b>Dispositivos</b></h3>
                                                 <script>
                                                     document.addEventListener("DOMContentLoaded", function() {
@@ -51,7 +45,6 @@
                                                         });
                                                     });
                                                 </script>
-                                            </li>
                                         </div>
                                     </div>
                                 </div>
@@ -59,10 +52,9 @@
                                 <div class="col m4" id="btnproveedores">
                                     <div class="card z-depth-1">
                                         <div class="card-image">
-                                            <img src="img/devices.png" alt="Imagen de dispositivos de venta" />
+                                            <img src="img/prov.png" alt="Imagen de dispositivos de venta" />
                                         </div>
                                         <div>
-                                            <li>
                                                 <h3 class="center-align"><b>Proveedores</b></h3>
                                                 <script>
                                                     document.addEventListener("DOMContentLoaded", function() {
@@ -73,7 +65,6 @@
                                                         });
                                                     });
                                                 </script>
-                                            </li>
                                         </div>
                                     </div>
                                 </div>

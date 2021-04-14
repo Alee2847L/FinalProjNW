@@ -4,6 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{SITE_TITLE}}</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/css/style.css" />
+  {{foreach SiteLinks}}
+    <link rel="stylesheet" href="{{this}}" />
+  {{endfor SiteLinks}}
+  {{foreach BeginScripts}}
+    <script src="{{this}}"></script>
+  {{endfor BeginScripts}}
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <!-- Iconos de FontAwesome solo para las redes sociales -->
@@ -15,57 +25,27 @@
      <!-- Menu de navegacion -->
 
     <div class="navbar-fixed">
-      <nav class="blue darken-2">
+      <nav class="cyan lighten-1">
         <div class="nav-wrapper container">
-          <a href="index.php" class="brand-logo">SysTech <i class="far fa-lightbulb material-icons left"></i></a>
+          <a href="index.php?page=iniciopublico" class="brand-logo">SysTech <i class="far fa-lightbulb material-icons left"></i></a>
           <a href="#" data-target="menu-side" class="sidenav-trigger">
             <i class="material-icons">menu</i>
           </a>
           <ul class="right hide-on-med-and-down">
+            {{with login}}
+               <li><span>{{userName}}</span></li>
+            {{endwith login}}
             <li>
-              <a href="index.php"
-                ><i class="fas fa-home material-icons left"></i>Inicio</a
-              >
+              <a href="index.php?page=compras_devices"><i class="fas fa-mobile-alt left"></i>dispositivos</a>
             </li>
             <li>
-              <a class="dropdown-trigger" id="btndisp" data-target="dispositivos"
-                >Dispositivos<i class="fas fa-laptop-house left"></i></a
-              >
-              <script>
-                      document.addEventListener("DOMContentLoaded", function () {
-                      document.getElementById("btndisp").addEventListener("click", function (e) {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      window.location.assign("index.php?page=disp");
-                      });
-                      });
-                  </script>
+              <a href="index.php?page=compras_services"><i class="fas fa-hands-helping"></i>Servicios</a>
             </li>
             <li>
-              <a class="dropdown-trigger" id="btnserv" data-target="Servicios"
-                >Servicios<i class="fas fa-briefcase aterial-icons left"></i></a>
-                <script>
-                      document.addEventListener("DOMContentLoaded", function () {
-                      document.getElementById("btnserv").addEventListener("click", function (e) {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      window.location.assign("index.php?page=serv");
-                      });
-                      });
-                  </script>
+              <a href="index.php?page=sec_login" >iniciar Sesión</a>
             </li>
             <li>
-              <a class="dropdown-trigger" href="#" data-target="usuarios"
-              <li><a href="index.php?page=mnt_usuarios">Usuarios</a></li>
-            </li>
-            <li>
-              <a class="dropdown-trigger" href="#" data-target="login"
-                    <li><a href="index.php?page=sec_login">Iniciar Sesión</a></li>
-                    
-            </li>
-            <li>
-              <a class="dropdown-trigger" href="#" data-target="logout"
-                >Cerrar Sesión</a>
+              <a href="index.php?page=sec_login">Salir</a>
             </li>
  
           </ul>
@@ -169,7 +149,7 @@
 </body>
 
 <!-- Footer -->
-<footer class="page-footer blue darken-2">
+<footer class="page-footer cyan lighten-1">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">

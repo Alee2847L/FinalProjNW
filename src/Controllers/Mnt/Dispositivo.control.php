@@ -1,7 +1,7 @@
 <?php 
 namespace Controllers\Mnt;
 
-class Dispositivo extends \Controllers\PublicController
+class Dispositivo extends \Controllers\PrivateController
 {
     private $idDispositivo = 0;
     private $nombre = "";
@@ -10,6 +10,8 @@ class Dispositivo extends \Controllers\PublicController
     private $categorias_idCategoria = "";
     private $precioUnitario = "";
     private $stock = "";
+    private $urldip = "";
+    
 
     private $mode_dsc = "";
     private $mode_adsc = array(
@@ -51,7 +53,7 @@ class Dispositivo extends \Controllers\PublicController
             if (!$this->hasErrors) {
                 switch ($this->mode){
                 case "INS":
-                    if (\Dao\Mnt\Dispositivos::insert($this->idDispositivo, $this->nombre, $this->marca, $this->serie, $this->categorias_idCategoria, $this->precioUnitario, $this->stock)) {
+                    if (\Dao\Mnt\Dispositivos::insert($this->idDispositivo, $this->nombre, $this->marca, $this->serie, $this->categorias_idCategoria, $this->precioUnitario, $this->stock, $this->urldip)) {
                         \Utilities\Site::redirectToWithMsg(
                             "index.php?page=mnt_dispositivos",
                             "Dispositivo Agregado Satisfactoriamente!"
@@ -59,7 +61,7 @@ class Dispositivo extends \Controllers\PublicController
                     }
                     break;
                 case "UPD":
-                    if (\Dao\Mnt\Dispositivos::update($this->nombre, $this->marca, $this->serie, $this->categorias_idCategoria, $this->precioUnitario, $this->stock, $this->idDispositivo)) {
+                    if (\Dao\Mnt\Dispositivos::update($this->nombre, $this->marca, $this->serie, $this->categorias_idCategoria, $this->precioUnitario, $this->stock, $this->urldip, $this->idDispositivo)) {
                         \Utilities\Site::redirectToWithMsg(
                             "index.php?page=mnt_dispositivos",
                             "Dispositivo Actualizado Satisfactoriamente!"
@@ -93,6 +95,7 @@ class Dispositivo extends \Controllers\PublicController
             $this->categorias_idCategoria = $_data["categorias_idCategoria"];
             $this->precioUnitario = $_data["precioUnitario"];
             $this->stock = $_data["stock"];
+            $this->urldip = $_data["urldip"];
             $this->_setViewData();
         }
     }
@@ -106,6 +109,7 @@ class Dispositivo extends \Controllers\PublicController
         $this->categorias_idCategoria = isset($_POST["categorias_idCategoria"]) ? $_POST["categorias_idCategoria"] :  "" ;
         $this->precioUnitario = isset($_POST["precioUnitario"]) ? $_POST["precioUnitario"] :  "" ;
         $this->stock = isset($_POST["stock"]) ? $_POST["stock"] :  "" ;
+        $this->urldip = isset($_POST["urldip"]) ? $_POST["urldip"] :  "" ;
 
         //validaciones
         //aplicar todas la reglas de negocio
@@ -127,7 +131,8 @@ class Dispositivo extends \Controllers\PublicController
             $this->marca,
             $this->serie,
             $this->precioUnitario,
-            $this->stock
+            $this->stock,
+            $this->urldip
         );
         $this->readonly = ($this->mode =="DEL" || $this->mode=="DSP") ? "readonly":"";
         $this->showaction = !($this->mode == "DSP");
