@@ -22,17 +22,13 @@
             <i class="material-icons">menu</i>
           </a>
           <ul class="right hide-on-med-and-down">
-            <li>
-              <a href="index.php?page=inicio"
-                ><i class="fas fa-home material-icons left"></i>Inicio</a
-              >
-            </li>
+          {{with login}}
+              <li><span>{{userName}}</span></li>
+            {{endwith login}}>
             {{foreach NAVIGATION}}
             <li><a href="{{nav_url}}">{{nav_label}}</a></li>
             {{endfor NAVIGATION}}
-            {{with login}}
-              <li><span>{{userName}}</span></li>
-        {    {endwith login}}
+            
             <li>
               <a href="index.php?page=sec_login">Salir</a>
             </li>

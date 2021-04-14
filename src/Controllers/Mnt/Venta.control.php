@@ -4,7 +4,7 @@ namespace Controllers\Mnt;
 class Venta extends \Controllers\PrivateController
 {
     private $idventas = 0;
-    private $usercod = 0;
+    private $usercodp = 0;
     private $idDispositivo = 0;
     private $idServicio = 0;
     private $precio = "";
@@ -52,7 +52,7 @@ class Venta extends \Controllers\PrivateController
             if (!$this->hasErrors) {
                 switch ($this->mode){
                 case "INS":
-                    if (\Dao\Mnt\Ventas::insert($this->idventas, $this->usercod, $this->idDispositivo, $this->idServicio, $this->precio, $this->isv, $this->total, $this->fechaFact)) {
+                    if (\Dao\Mnt\Ventas::insert($this->idventas, $this->usercodp, $this->idDispositivo, $this->idServicio, $this->precio, $this->isv, $this->total, $this->fechaFact)) {
                         \Utilities\Site::redirectToWithMsg(
                             "index.php?page=mnt_ventas",
                             "¡Venta Agregada Satisfactoriamente!"
@@ -60,7 +60,7 @@ class Venta extends \Controllers\PrivateController
                     }
                     break;
                 case "UPD":
-                    if (\Dao\Mnt\Ventas::update($this->usercod, $this->idDispositivo, $this->idServicio, $this->precio, $this->isv, $this->total, $this->fechaFact, $this->idventas)) {
+                    if (\Dao\Mnt\Ventas::update($this->usercodp, $this->idDispositivo, $this->idServicio, $this->precio, $this->isv, $this->total, $this->fechaFact, $this->idventas)) {
                         \Utilities\Site::redirectToWithMsg(
                             "index.php?page=mnt_ventas",
                             "¡Venta Actualizada Satisfactoriamente!"
@@ -88,7 +88,7 @@ class Venta extends \Controllers\PrivateController
         $_data = \Dao\Mnt\Ventas::getOne($this->idventas);
         if ($_data) {
             $this->idventas = $_data["idventas"];
-            $this->usercod = $_data["usercod"];
+            $this->usercodp = $_data["usercodp"];
             $this->idDispositivo = $_data["idDispositivo"];
             $this->idServicio = $_data["idServicio"];
             $this->precio = $_data["precio"];
@@ -102,7 +102,7 @@ class Venta extends \Controllers\PrivateController
     private function _loadPostData()
     {
         $this->idventas = isset($_POST["idventas"]) ? $_POST["idventas"] : 0 ;
-        $this->usercod = isset($_POST["usercod"]) ? $_POST["usercod"] : 0 ;
+        $this->usercodp = isset($_POST["usercodp"]) ? $_POST["usercodp"] : 0 ;
         $this->idDispositivo = isset($_POST["idDispositivo"]) ? $_POST["idDispositivo"] : 0 ;
         $this->idServicio = isset($_POST["idServicio"]) ? $_POST["idServicio"] : 0 ;
         $this->precio = isset($_POST["precio"]) ? $_POST["precio"] : "" ;
@@ -112,7 +112,7 @@ class Venta extends \Controllers\PrivateController
 
         //validaciones
         //aplicar todas la reglas de negocio
-        if (preg_match('/^\s*$/', $this->usercod)) {
+        if (preg_match('/^\s*$/', $this->usercodp)) {
             $this->aErrors[] = "¡La Venta no puede ir vacia!";
         }
         //
@@ -125,7 +125,7 @@ class Venta extends \Controllers\PrivateController
         $this->mode_dsc = sprintf(
             $this->mode_adsc[$this->mode],
             $this->idventas,
-            $this->usercod, 
+            $this->usercodp, 
             $this->idDispositivo, 
             $this->idServicio, 
             $this->precio, 

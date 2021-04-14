@@ -7,8 +7,8 @@
         </section>
         
         <section>
-            <label for="usercod">Codigo Usuario</label>
-            <input type="text" {{readonly}} name="usercod" value="{{usercod}}" maxlength="45" placeholder="Codigo Usuario" />
+            <label for="usercodp">Codigo Usuario</label>
+            <input type="text" {{readonly}} name="usercodp" value="{{usercodp}}" maxlength="45" placeholder="Codigo Usuario" />
         </section>
         <section>
             <label for="idDispositivo">Codigo Dispositivo</label>

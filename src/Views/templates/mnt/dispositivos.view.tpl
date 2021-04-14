@@ -12,6 +12,7 @@
         <th>IDCategoria</th>
         <th>Precio</th>
         <th>stock</th>
+        <th>urldip</th>
         <th>
           {{if new_enabled}}
             <button id="btnAdd">Nuevo</button>
@@ -29,6 +30,7 @@
         <td>{{categorias_idCategoria}}</td>
         <td>{{precioUnitario}}</td>
         <td>{{stock}}</td>
+        <td>{{urldip}}</td>
 
         {{if edit_enabled}}
         <td>

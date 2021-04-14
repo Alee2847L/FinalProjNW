@@ -19,6 +19,18 @@ class Nav {
                 "nav_label"=>"Servicios"
             );
         }
+        if (\Utilities\Security::isAuthorized($userID, "MnUsuarios")) {
+            $tmpNAVIGATION[] = array(
+                "nav_url"=>"index.php?page=mnt_usuarios",
+                "nav_label"=>"Usuarios"
+            );
+        }
+        if (\Utilities\Security::isAuthorized($userID, "Mncheckout")) {
+            $tmpNAVIGATION[] = array(
+                "nav_url"=>"index.php?page=checkout_checkout",
+                "nav_label"=>"placer order"
+            );
+        }
         \Utilities\Context::setContext("NAVIGATION", $tmpNAVIGATION);
     }
 

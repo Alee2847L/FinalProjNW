@@ -22,7 +22,7 @@
       {{foreach items}}
       <tr>
         <td>{{idventas}}</td>
-        <td><a href="index.php?page=mnt_venta&mode=DSP&idventas={{idventas}}">{{usercod}}</a></td>
+        <td><a href="index.php?page=mnt_venta&mode=DSP&idventas={{idventas}}">{{usercodp}}</a></td>
         <td>{{idDispositivo}}</td>
         <td>{{idServicio}}</td>
         <td>{{precio}}</td>

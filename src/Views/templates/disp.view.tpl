@@ -4,7 +4,6 @@
     <table>
         <thead>
             <tr>
-                <!-- Te sugerimos -->
                 <div class="sugerimos">
                     <div class="section">
                         <h3 class="center-align"><b>Dispositivos</b></h3>

@@ -32,15 +32,17 @@
             <i class="material-icons">menu</i>
           </a>
           <ul class="right hide-on-med-and-down">
-            <li>
-              <a href="index.php?page=iniciopublico"><i class="fas fa-home material-icons left"></i>Inicio</a>
-            </li>
             {{with login}}
                <li><span>{{userName}}</span></li>
             {{endwith login}}
-
             <li>
-              <a href="index.php?page=sec_login">iniciar Seción</a>
+              <a href="index.php?page=compras_devices"><i class="fas fa-mobile-alt left"></i>dispositivos</a>
+            </li>
+            <li>
+              <a href="index.php?page=compras_services"><i class="fas fa-hands-helping"></i>Servicios</a>
+            </li>
+            <li>
+              <a href="index.php?page=sec_login" >iniciar Seción</a>
             </li>
             <li>
               <a href="index.php?page=sec_login">Salir</a>
